@@ -25,3 +25,6 @@ Route::middleware(['auth', AuthAdmin::class]) -> group(function() {
 Route::middleware(['auth', AuthAdmin::class]) -> group(function() {
 Route::get('/admin/products',[AdminController::class,'products'])->name('admin.products');
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
